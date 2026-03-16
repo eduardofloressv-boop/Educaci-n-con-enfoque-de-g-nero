@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import { Heart, User, Sparkles, Venus, Mars, Info, HelpCircle, GraduationCap, Award, Scale, ShieldOff, Users } from 'lucide-react';
+import React from 'react';
+import { Heart, User, Sparkles, Venus, Info, HelpCircle, GraduationCap, Scale, ShieldOff, Users } from 'lucide-react';
 
 const Card = ({ title, icon: Icon, color, definition, examples, details }) => {
   return (
-    <div 
-      className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl"
-    >
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl h-full flex flex-col">
       <div className={`p-4 ${color} flex items-center gap-3 text-white`}>
         <Icon size={24} />
         <h3 className="font-bold text-lg uppercase tracking-wider">{title}</h3>
       </div>
-      <div className="p-6 min-h-[220px] flex flex-col justify-between">
+      <div className="p-6 flex-grow flex flex-col justify-between">
         <div>
           <p className="text-gray-700 font-medium mb-4 text-sm leading-relaxed">
             {definition}
           </p>
           <div className="bg-gray-50 p-3 rounded-lg border-l-4 border-current">
-            <span className="text-xs font-bold text-gray-500 block mb-1">EJEMPLOS / ESPECTRO:</span>
+            <span className="text-xs font-bold text-gray-500 block mb-1 uppercase">Ejemplos / Espectro:</span>
             <p className="text-gray-600 text-xs italic">{examples}</p>
           </div>
         </div>
@@ -29,19 +27,12 @@ const Card = ({ title, icon: Icon, color, definition, examples, details }) => {
   );
 };
 
-const DefinitionItem = ({ term, definition }) => (
-  <div className="flex flex-col p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-indigo-200 transition-colors">
-    <span className="font-bold text-indigo-600 text-sm mb-1">{term}</span>
-    <p className="text-gray-600 text-xs leading-tight">{definition}</p>
-  </div>
-);
-
 const App = () => {
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-gray-800">
       {/* Header */}
       <header className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mb-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mb-4 pb-2">
           Comprendiendo la Diversidad Humana
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto italic">
@@ -85,7 +76,7 @@ const App = () => {
         />
       </div>
 
-      {/* Nueva Sección: Dinámicas y Realidades Sociales */}
+      {/* Dinámicas Sociales */}
       <section className="max-w-6xl mx-auto mb-16">
         <div className="flex items-center gap-3 mb-8">
           <Users className="text-indigo-600" size={32} />
@@ -93,7 +84,6 @@ const App = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Feminismo */}
           <div className="bg-white p-8 rounded-3xl shadow-md border-t-8 border-indigo-400">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-indigo-100 rounded-2xl">
@@ -101,15 +91,14 @@ const App = () => {
               </div>
               <h3 className="text-2xl font-bold text-indigo-900 tracking-wide">Feminismo</h3>
             </div>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Movimiento social, político y filosófico que busca la <strong>igualdad de derechos y oportunidades</strong> entre hombres y mujeres. Cuestiona las estructuras de poder (patriarcado) que han subordinado históricamente a las mujeres.
+            <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+              Movimiento social, político y filosófico que busca la <strong>igualdad de derechos y oportunidades</strong> entre hombres y mujeres. Cuestiona las estructuras de poder que han subordinado históricamente a las mujeres.
             </p>
             <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100 italic text-sm text-indigo-800">
               "No es lo opuesto al machismo; es la búsqueda de justicia e igualdad humana."
             </div>
           </div>
 
-          {/* Machismo */}
           <div className="bg-white p-8 rounded-3xl shadow-md border-t-8 border-rose-400">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-rose-100 rounded-2xl">
@@ -117,8 +106,8 @@ const App = () => {
               </div>
               <h3 className="text-2xl font-bold text-rose-900 tracking-wide">Machismo</h3>
             </div>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Sistema de creencias, conductas y actitudes que sostienen la <strong>superioridad del hombre sobre la mujer</strong>. Fundamenta la discriminación, la restricción de derechos y diversas formas de violencia de género.
+            <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+              Sistema de creencias y conductas que sostienen la <strong>superioridad del hombre sobre la mujer</strong>. Fundamenta la discriminación y diversas formas de violencia de género.
             </p>
             <div className="bg-rose-50 p-4 rounded-xl border border-rose-100 italic text-sm text-rose-800">
               "Afecta también a los hombres al imponerles roles rígidos y limitar su expresión emocional."
@@ -127,41 +116,30 @@ const App = () => {
         </div>
       </section>
 
-      {/* Glosario / Conceptos clave */}
+      {/* Glosario */}
       <section className="max-w-6xl mx-auto bg-slate-800 rounded-3xl p-8 mb-12 shadow-inner text-white">
         <div className="flex items-center gap-3 mb-6">
           <HelpCircle className="text-indigo-400" />
           <h2 className="text-2xl font-bold">Glosario de Términos</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">Cisgénero</span>
-            <p className="text-slate-300 text-xs">Identidad que coincide con el sexo asignado al nacer.</p>
-          </div>
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">Transgénero</span>
-            <p className="text-slate-300 text-xs">Identidad que difiere del sexo asignado al nacer.</p>
-          </div>
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">Intersexualidad</span>
-            <p className="text-slate-300 text-xs">Variaciones biológicas que no encajan en el binario típico.</p>
-          </div>
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">No Binario</span>
-            <p className="text-slate-300 text-xs">Identidad que no se percibe exclusivamente como hombre o mujer.</p>
-          </div>
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">Patriarcado</span>
-            <p className="text-slate-300 text-xs">Sistema social donde el hombre ejerce el poder y liderazgo dominante.</p>
-          </div>
-          <div className="p-4 bg-slate-700 rounded-xl border border-slate-600">
-            <span className="font-bold text-indigo-400 block mb-1">Sororidad</span>
-            <p className="text-slate-300 text-xs">Solidaridad entre mujeres en contextos de discriminación.</p>
-          </div>
+          {[
+            { t: "Cisgénero", d: "Identidad que coincide con el sexo asignado al nacer." },
+            { t: "Transgénero", d: "Identidad que difiere del sexo asignado al nacer." },
+            { t: "Intersexualidad", d: "Variaciones biológicas que no encajan en el binario típico." },
+            { t: "No Binario", d: "Identidad que no se percibe exclusivamente como hombre o mujer." },
+            { t: "Patriarcado", d: "Sistema social donde el hombre ejerce el poder dominante." },
+            { t: "Sororidad", d: "Solidaridad entre mujeres en contextos de discriminación." }
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 bg-slate-700 rounded-xl border border-slate-600">
+              <span className="font-bold text-indigo-400 block mb-1">{item.t}</span>
+              <p className="text-slate-300 text-xs">{item.d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Footer / Créditos */}
+      {/* Footer */}
       <footer className="max-w-4xl mx-auto text-center border-t border-gray-200 pt-8 pb-12">
         <div className="flex flex-col items-center gap-4">
           <div className="inline-block px-4 py-1 bg-white rounded-full border border-gray-200 shadow-sm text-[10px] text-gray-400 uppercase tracking-widest font-bold">
@@ -174,22 +152,14 @@ const App = () => {
               <span className="text-gray-900 font-extrabold text-xl tracking-tight">Psic. Eduardo Flores</span>
               <div className="h-1 w-8 bg-purple-500 rounded-full"></div>
             </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-1.5 bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-100 shadow-sm">
-                <GraduationCap size={18} className="text-indigo-600" />
-                <span className="font-bold text-indigo-900 italic">Especialista en Educación y Psicología Social</span>
-              </div>
+            <div className="flex items-center gap-1.5 bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-100">
+              <GraduationCap size={18} className="text-indigo-600" />
+              <span className="font-bold text-indigo-900 text-sm italic">Especialista en Educación y Psicología Social</span>
             </div>
-
             <p className="text-gray-400 text-xs font-semibold uppercase tracking-tighter">
               Facilitador de Habilidades Transversales
             </p>
           </div>
-
-          <p className="text-gray-400 text-[10px] mt-6 max-w-lg leading-tight italic">
-            "Fomentando espacios de aprendizaje inclusivos y respetuosos en la comunidad."
-          </p>
         </div>
       </footer>
     </div>
