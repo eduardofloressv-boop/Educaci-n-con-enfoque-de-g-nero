@@ -3,78 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diversidad Humana | Psic. Eduardo Flores</title>
+    <title>Infografía: Educación con Enfoque de Género | Eduardo Flores</title>
+    <!-- Tailwind CSS para el diseño -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Lucide Icons para los iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .bg-gradient-custom {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100">
+<body class="bg-gray-50 text-gray-900">
 
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <header class="text-center mb-16">
-            <span class="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-indigo-100">
-                Recurso Pedagógico Especializado
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
-                Conceptualización de <span class="text-indigo-600">Género</span> y <span class="text-purple-600">Sexualidad</span>
+    <div class="min-h-screen p-4 md:p-12 max-w-6xl mx-auto">
+        
+        <!-- Encabezado -->
+        <header class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4 shadow-sm">
+                <i data-lucide="globe" class="w-3 h-3"></i> Psicología Social y Educación
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 tracking-tighter leading-tight">
+                Guía Fácil: <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Género y Diversidad</span>
             </h1>
-            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed italic">
-                "La educación es el arma más poderosa para cambiar el mundo". 
-                Una guía visual para facilitar el aprendizaje inclusivo.
+            <p class="text-gray-500 mt-6 max-w-3xl mx-auto text-lg leading-relaxed font-medium">
+                Entender estas diferencias nos ayuda a respetarnos más y a crear un mundo donde todos podamos ser nosotros mismos.
             </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            <div class="bg-white p-1 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div class="bg-emerald-500 rounded-t-[1.4rem] p-4 text-white flex items-center justify-between">
-                    <h3 class="font-bold uppercase text-xs tracking-widest">Sexo Biológico</h3>
-                    <i class="fas fa-dna opacity-50"></i>
+        <!-- Resumen de Pilares (4 Cards) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-600 flex flex-col hover:shadow-md transition-all">
+                <div class="flex items-center mb-3">
+                    <div class="p-2 rounded-lg bg-blue-100 mr-3 text-blue-600"><i data-lucide="dna" class="w-6 h-6"></i></div>
+                    <div><h3 class="font-bold text-gray-800">Cuerpo</h3><p class="text-[10px] uppercase font-bold text-gray-400">Biología</p></div>
                 </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed font-medium">Atributos físicos, biológicos y hormonales con los que nace una persona.</p>
-                    <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100 text-[11px] font-bold text-emerald-700 uppercase">
-                        Ej: Hombre, Mujer, Intersexual
+                <p class="text-gray-600 text-sm">Con lo que nacemos.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-purple-600 flex flex-col hover:shadow-md transition-all">
+                <div class="flex items-center mb-3">
+                    <div class="p-2 rounded-lg bg-purple-100 mr-3 text-purple-600"><i data-lucide="shapes" class="w-6 h-6"></i></div>
+                    <div><h3 class="font-bold text-gray-800">Sociedad</h3><p class="text-[10px] uppercase font-bold text-gray-400">Género</p></div>
+                </div>
+                <p class="text-gray-600 text-sm">Lo que nos enseñan.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-pink-600 flex flex-col hover:shadow-md transition-all">
+                <div class="flex items-center mb-3">
+                    <div class="p-2 rounded-lg bg-pink-100 mr-3 text-pink-600"><i data-lucide="fingerprint" class="w-6 h-6"></i></div>
+                    <div><h3 class="font-bold text-gray-800">Sentir</h3><p class="text-[10px] uppercase font-bold text-gray-400">Identidad</p></div>
+                </div>
+                <p class="text-gray-600 text-sm">Quién soy por dentro.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-indigo-600 flex flex-col hover:shadow-md transition-all">
+                <div class="flex items-center mb-3">
+                    <div class="p-2 rounded-lg bg-indigo-100 mr-3 text-indigo-600"><i data-lucide="compass" class="w-6 h-6"></i></div>
+                    <div><h3 class="font-bold text-gray-800">Gusto</h3><p class="text-[10px] uppercase font-bold text-gray-400">Orientación</p></div>
+                </div>
+                <p class="text-gray-600 text-sm">Quién me atrae.</p>
+            </div>
+        </div>
+
+        <!-- Sistema de Pestañas Interactivas -->
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 mb-16">
+            <div class="flex flex-wrap border-b border-gray-100 overflow-x-auto bg-gray-50/30" id="tab-buttons">
+                <button onclick="openTab(event, 'pilar1')" class="tab-btn active flex items-center gap-3 px-10 py-6 text-sm font-black transition-all duration-300 whitespace-nowrap text-purple-700 border-b-4 border-purple-600 bg-white">
+                    <i data-lucide="layers" class="w-5 h-5"></i> SEXO Y GÉNERO
+                </button>
+                <button onclick="openTab(event, 'pilar2')" class="tab-btn flex items-center gap-3 px-10 py-6 text-sm font-black transition-all duration-300 whitespace-nowrap text-gray-400 hover:text-gray-600 hover:bg-gray-50">
+                    <i data-lucide="fingerprint" class="w-5 h-5"></i> IDENTIDAD Y EXPRESIÓN
+                </button>
+                <button onclick="openTab(event, 'pilar3')" class="tab-btn flex items-center gap-3 px-10 py-6 text-sm font-black transition-all duration-300 whitespace-nowrap text-gray-400 hover:text-gray-600 hover:bg-gray-50">
+                    <i data-lucide="heart" class="w-5 h-5"></i> ATRACCIÓN Y GUSTOS
+                </button>
+                <button onclick="openTab(event, 'pilar4')" class="tab-btn flex items-center gap-3 px-10 py-6 text-sm font-black transition-all duration-300 whitespace-nowrap text-gray-400 hover:text-gray-600 hover:bg-gray-50">
+                    <i data-lucide="scale" class="w-5 h-5"></i> DESIGUALDAD E IGUALDAD
+                </button>
+            </div>
+
+            <!-- Contenidos -->
+            <div class="p-12 min-h-[350px]">
+                <!-- Pestaña 1 -->
+                <div id="pilar1" class="tab-content active">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-5 bg-blue-50 rounded-xl border border-blue-100">
+                            <h4 class="font-bold text-blue-800 mb-2 flex items-center gap-2"><i data-lucide="dna" class="w-4 h-4"></i> Sexo (Lo biológico)</h4>
+                            <p class="text-sm text-gray-700">Características biológicas con las que nacemos (órganos, hormonas).</p>
+                            <p class="mt-2 text-xs text-blue-600 italic font-medium"><strong>Ejemplo:</strong> Nacer con cuerpo de hombre, mujer o intersexualidad.</p>
+                        </div>
+                        <div class="p-5 bg-purple-50 rounded-xl border border-purple-100">
+                            <h4 class="font-bold text-purple-800 mb-2 flex items-center gap-2"><i data-lucide="shapes" class="w-4 h-4"></i> Género (Lo social)</h4>
+                            <p class="text-sm text-gray-700">Etiquetas y roles que la sociedad nos enseña desde niños.</p>
+                            <p class="mt-2 text-xs text-purple-600 italic font-medium"><strong>Ejemplo:</strong> La idea de que a las niñas les guste el rosa y a los niños los carritos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pestaña 2 -->
+                <div id="pilar2" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-5 bg-pink-50 rounded-xl border border-pink-100">
+                            <h4 class="font-bold text-pink-800 mb-2">Identidad (¿Quién soy?)</h4>
+                            <p class="text-sm text-gray-700">Cómo te sientes por dentro. Tu verdad interna sobre tu género.</p>
+                            <p class="mt-2 text-xs text-pink-600 italic font-medium"><strong>Ejemplo:</strong> Sentirte hombre aunque hayas nacido con cuerpo de mujer.</p>
+                        </div>
+                        <div class="p-5 bg-indigo-50 rounded-xl border border-indigo-100">
+                            <h4 class="font-bold text-indigo-800 mb-2">Expresión (¿Cómo me ven?)</h4>
+                            <p class="text-sm text-gray-700">Cómo muestras tu género al mundo con tu ropa, peinado o gestos.</p>
+                            <p class="mt-2 text-xs text-indigo-600 italic font-medium"><strong>Ejemplo:</strong> Un hombre que usa el cabello largo o ropa con colores "femeninos".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pestaña 3 -->
+                <div id="pilar3" class="tab-content">
+                    <p class="text-sm text-gray-600 font-medium italic mb-4">La orientación sexual es simplemente quién te gusta o de quién te enamoras.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Heterosexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Género opuesto</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Hombre atraído por mujeres.</span>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Homosexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Mismo género</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Hombres atraídos por hombres.</span>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Bisexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Ambos géneros</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Te atraen hombres y mujeres.</span>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Pansexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Hacia la persona</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Te enamoras de la forma de ser.</span>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Asexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Poco interés sexual</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Valoras más el afecto que el sexo.</span>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-xl bg-white shadow-sm">
+                            <span class="font-bold text-gray-800 text-sm block mb-1">Demisexual</span>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-2">Tras un vínculo</p>
+                            <span class="text-xs text-purple-600 italic">Ej: Necesitas ser muy amigo primero.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pestaña 4 -->
+                <div id="pilar4" class="tab-content">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1 p-5 bg-rose-50 rounded-xl border border-rose-100">
+                            <h4 class="font-bold text-rose-700 flex items-center gap-2 text-sm uppercase"><i data-lucide="zap" class="w-4 h-4"></i> Machismo</h4>
+                            <p class="text-sm text-gray-600">Creer que el hombre es superior. Obliga a los hombres a ser rudos y no llorar.</p>
+                            <p class="text-xs text-rose-600 italic font-medium mt-2"><strong>Ejemplo:</strong> Decir que "las mujeres no saben manejar".</p>
+                        </div>
+                        <div class="flex-1 p-5 bg-emerald-50 rounded-xl border border-emerald-100">
+                            <h4 class="font-bold text-emerald-700 flex items-center gap-2 text-sm uppercase"><i data-lucide="scale" class="w-4 h-4"></i> Feminismo y Equidad</h4>
+                            <p class="text-sm text-gray-600">Esfuerzo por lograr que hombres y mujeres tengan los mismos derechos y oportunidades.</p>
+                            <p class="text-xs text-emerald-600 italic font-medium mt-2"><strong>Ejemplo:</strong> Que un papá cuide a sus hijos igual que la mamá.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white p-1 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div class="bg-blue-500 rounded-t-[1.4rem] p-4 text-white flex items-center justify-between">
-                    <h3 class="font-bold uppercase text-xs tracking-widest">Identidad de Género</h3>
-                    <i class="fas fa-user-check opacity-50"></i>
+        <!-- Firma y Reflexión -->
+        <div class="mt-16 bg-white border border-gray-200 rounded-[3rem] p-12 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-5 text-gray-400">
+                <i data-lucide="quote" class="w-48 h-48"></i>
+            </div>
+            <div class="relative z-10 flex flex-col items-center text-center">
+                <div class="w-20 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 mb-10 rounded-full"></div>
+                
+                <div class="max-w-3xl mb-12">
+                    <p class="text-2xl md:text-3xl font-serif text-gray-800 italic leading-snug">
+                        "Educar con enfoque de género no es decirle a nadie cómo debe ser, sino darle a cada persona la libertad de ser quien realmente es, sin miedo a que lo juzguen."
+                    </p>
                 </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed font-medium">Vivencia interna e individual del género tal como cada persona la siente.</p>
-                    <div class="bg-blue-50 p-3 rounded-xl border border-blue-100 text-[11px] font-bold text-blue-700 uppercase">
-                        Ej: Cisgénero, Trans, No Binario
-                    </div>
+
+                <div class="flex flex-col items-center">
+                    <p class="text-gray-400 text-[10px] uppercase tracking-[0.4em] mb-3 font-black">Autoría del Documento</p>
+                    <h3 class="text-3xl font-black text-gray-900 mb-1 tracking-tighter">Eduardo Flores</h3>
+                    <p class="text-indigo-600 font-extrabold text-sm tracking-wide bg-indigo-50 px-4 py-1 rounded-full">Especialista en Educación y Psicología Social</p>
+                </div>
+                
+                <div class="mt-8 flex gap-3">
+                    <div class="h-2 w-2 rounded-full bg-purple-300"></div>
+                    <div class="h-2 w-2 rounded-full bg-indigo-300"></div>
+                    <div class="h-2 w-2 rounded-full bg-pink-300"></div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white p-1 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div class="bg-purple-500 rounded-t-[1.4rem] p-4 text-white flex items-center justify-between">
-                    <h3 class="font-bold uppercase text-xs tracking-widest">Expresión de Género</h3>
-                    <i class="fas fa-palette opacity-50"></i>
-                </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed font-medium">Manifestación externa (vestimenta, conducta) de nuestra identidad.</p>
-                    <div class="bg-purple-50 p-3 rounded-xl border border-purple-100 text-[11px] font-bold text-purple-700 uppercase">
-                        Ej: Masculina, Femenina, Andrógina
-                    </div>
-                </div>
+        <!-- Footer -->
+        <footer class="mt-16 text-center text-gray-400 text-[10px] pb-12 border-t border-gray-100 pt-10 uppercase tracking-[0.2em] font-black">
+            <div class="flex items-center justify-center gap-3 mb-3">
+                <i data-lucide="info" class="w-4 h-4 text-gray-200"></i>
+                <span>Guía práctica para entender la diversidad humana</span>
             </div>
+            <p>© 2026 • San Salvador • Justicia Social e Igualdad</p>
+        </footer>
+    </div>
 
-            <div class="bg-white p-1 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-xl hover:-translate-y-1">
-                <div class="bg-pink-500 rounded-t-[1.4rem] p-4 text-white flex items-center justify-between">
-                    <h3 class="font-bold uppercase text-xs tracking-widest">Orientación Sexual</h3>
-                    <i class="fas fa-heart opacity-50"></i>
-                </div>
-                <div class="p-6">
-                    <p class="text-sm text-slate-600 mb-4 leading-relaxed font-medium">Capacidad de sentir atracción física o romántica hacia otras personas.</p>
-                    <div class="bg-pink-50 p-3 rounded
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Lógica de pestañas
+        function openTab(evt, tabId) {
+            // Ocultar todos los contenidos
+            const contents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+
+            // Desactivar todos los botones
+            const buttons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active", "text-purple-700", "border-b-4", "border-purple-600", "bg-white", "scale-105", "z-10");
+                buttons[i].classList.add("text-gray-400");
+            }
+
+            // Mostrar el contenido seleccionado
+            document.getElementById(tabId).classList.add("active");
+
+            // Activar botón seleccionado
+            evt.currentTarget.classList.add("active", "text-purple-700", "border-b-4", "border-purple-600", "bg-white", "scale-105", "z-10");
+            evt.currentTarget.classList.remove("text-gray-400");
+        }
+    </script>
+</body>
+</html>
